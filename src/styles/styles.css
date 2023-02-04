@@ -1,0 +1,271 @@
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: "Chivo", sans-serif;
+  background-color: hsl(224deg, 35%, 11%);
+  height: 100vh;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background-image: url("../assets/mobile/image-host.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+}
+
+.header {
+  display: grid;
+  place-items: center;
+  margin-top: 62px;
+}
+
+.content {
+  width: 87.3%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.content__heading {
+  margin-top: 57px;
+  margin-bottom: 0px;
+  font-weight: 400;
+  font-size: 1.625rem;
+  line-height: 2.375rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: hsl(0deg, 0%, 100%);
+}
+.content__heading--green {
+  color: hsl(157deg, 74%, 62%);
+}
+.content__para {
+  margin-top: 16px;
+  margin-bottom: 0;
+  font-weight: 400;
+  font-size: 0.938rem;
+  line-height: 1.563rem;
+  text-align: center;
+  color: hsl(225deg, 40%, 83%);
+}
+.content__sponsors {
+  order: 1;
+  margin-top: 33px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 48px;
+}
+.content__sponsors .spotify {
+  width: 56px;
+  height: 17px;
+}
+.content__sponsors .apple {
+  width: 45px;
+  height: 17px;
+}
+.content__sponsors .google {
+  width: 73px;
+  height: 11px;
+}
+.content__sponsors .pocket {
+  width: 77px;
+  height: 15px;
+}
+.content__sponsors__img + .content__sponsors__img {
+  margin-left: 23px;
+}
+.content__form {
+  order: 3;
+}
+.content__form__input {
+  width: 100%;
+  border-radius: 28px;
+  background: hsl(225deg, 26%, 23%);
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.75rem;
+  border: none;
+  color: #ffffff;
+  padding: 9px;
+  padding-left: 23px;
+}
+.content__form__input::-moz-placeholder {
+  font-weight: bold;
+}
+.content__form__input:-ms-input-placeholder {
+  font-weight: bold;
+}
+.content__form__input::placeholder {
+  font-weight: bold;
+}
+.content__form__button {
+  width: 100%;
+  margin-top: 16px;
+  font-family: "Chivo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.75rem;
+  color: hsl(224deg, 35%, 11%);
+  background: hsl(157deg, 74%, 62%);
+  border: none;
+  padding: 9px;
+  box-shadow: 0px 25px 20px -20px rgba(84, 230, 175, 0.497913);
+  border-radius: 28px;
+  cursor: pointer;
+}
+.content__form__button:hover {
+  background: #b3ffe2;
+}
+.content .error {
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  order: 2;
+  color: #fb3e3e;
+  margin-bottom: 8px;
+  margin-left: 23px;
+}
+
+.dots {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: url("../assets/tablet/image-host.jpg");
+    background-repeat: no-repeat;
+    background-position: top right;
+  }
+  body::before {
+    background-image: none;
+  }
+  .error {
+    margin-top: 8px;
+    margin-left: 23px;
+  }
+  .header {
+    display: block;
+    margin-top: 50px;
+    margin-left: 32px;
+  }
+  .content {
+    background-color: hsl(224deg, 35%, 11%);
+    margin-top: 152px;
+    margin-left: 39px;
+    width: 635px;
+  }
+  .content__heading {
+    margin-top: 93px;
+    font-size: 3rem;
+    line-height: 3.5rem;
+    text-align: start;
+  }
+  .content__para {
+    margin-top: 31px;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    text-align: start;
+    width: 70%;
+  }
+  .content__form {
+    order: 1;
+    width: 427px;
+    background: hsl(225deg, 26%, 23%);
+    border-radius: 28px;
+    display: flex;
+    margin-top: 40px;
+  }
+  .content__form__input {
+    margin-top: 0;
+  }
+  .content__form__button {
+    margin: 5px;
+    width: 57.5%;
+    font-size: 0.875rem;
+    line-height: 1.75rem;
+    font-weight: bold;
+  }
+  .content__sponsors {
+    order: 2;
+    margin-top: 64px;
+    justify-content: flex-start;
+  }
+  .content__sponsors .spotify {
+    width: 96px;
+    height: 29px;
+  }
+  .content__sponsors .apple {
+    width: 78px;
+    height: 29px;
+  }
+  .content__sponsors .google {
+    width: 125px;
+    height: 18px;
+  }
+  .content__sponsors .pocket {
+    width: 129px;
+    height: 26px;
+  }
+  .dots {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+  }
+}
+@media (min-width: 1440px) {
+  body {
+    background-image: none;
+    background-image: url("../assets/desktop/image-host.jpg");
+    background-position: top 130px right;
+  }
+  .header {
+    margin-top: 102px;
+    margin-left: 165px;
+  }
+  .content {
+    margin-top: 103px;
+    margin-left: 165px;
+    width: 723px;
+  }
+  .content__heading {
+    margin-top: 88px;
+    font-size: 3.25rem;
+    line-height: 3.875rem;
+  }
+  .content__para {
+    margin-top: 24px;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  .content__form {
+    width: 427px;
+  }
+  .content__form__input {
+    padding-right: 32px;
+  }
+  .content__form__button {
+    width: 67%;
+  }
+  .dots {
+    left: calc(100% - 232px);
+    bottom: 78px;
+  }
+}/*# sourceMappingURL=styles.css.map */

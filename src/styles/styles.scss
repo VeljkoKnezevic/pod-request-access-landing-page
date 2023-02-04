@@ -1,0 +1,323 @@
+$green: hsl(157, 74%, 62%);
+$dark-purple: hsl(225, 26%, 23%);
+$black: hsl(224, 35%, 11%);
+$white: hsl(0, 0%, 100%);
+$purple: hsl(225, 21%, 45%);
+$light-purple: hsl(225, 40%, 83%);
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: "Chivo", sans-serif;
+  background-color: $black;
+  height: 100vh;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-image: url("../assets/mobile/image-host.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+  }
+}
+
+.header {
+  display: grid;
+  place-items: center;
+  margin-top: 62px;
+}
+
+.content {
+  width: 87.3%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  &__heading {
+    margin-top: 57px;
+    margin-bottom: 0px;
+    font-weight: 400;
+    font-size: 1.625rem;
+    line-height: 2.375rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: $white;
+
+    &--green {
+      color: $green;
+    }
+  }
+
+  &__para {
+    margin-top: 16px;
+    margin-bottom: 0;
+    font-weight: 400;
+    font-size: 0.938rem;
+    line-height: 1.563rem;
+    text-align: center;
+    color: $light-purple;
+  }
+
+  &__sponsors {
+    order: 1;
+    margin-top: 33px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+
+    .spotify {
+      width: 56px;
+      height: 17px;
+    }
+
+    .apple {
+      width: 45px;
+      height: 17px;
+    }
+
+    .google {
+      width: 73px;
+      height: 11px;
+    }
+
+    .pocket {
+      width: 77px;
+      height: 15px;
+    }
+
+    &__img + &__img {
+      margin-left: 23px;
+    }
+  }
+
+  &__form {
+    order: 3;
+
+    &__input {
+      width: 100%;
+      border-radius: 28px;
+      background: $dark-purple;
+      font-weight: 400;
+      font-size: 0.875rem;
+      line-height: 1.75rem;
+      border: none;
+      color: #ffffff;
+      padding: 9px;
+      padding-left: 23px;
+
+      &::placeholder {
+        font-weight: bold;
+      }
+    }
+
+    &__button {
+      width: 100%;
+      margin-top: 16px;
+      font-family: "Chivo";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 0.875rem;
+      line-height: 1.75rem;
+      color: $black;
+      background: $green;
+      border: none;
+      padding: 9px;
+      box-shadow: 0px 25px 20px -20px rgba(84, 230, 175, 0.497913);
+      border-radius: 28px;
+      cursor: pointer;
+      &:hover {
+        background: #b3ffe2;
+      }
+    }
+  }
+
+  .error {
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+    order: 2;
+    color: #fb3e3e;
+    margin-bottom: 8px;
+    margin-left: 23px;
+  }
+}
+
+.dots {
+  display: none;
+}
+
+//
+//
+// Tablet
+//
+//
+
+@media (min-width: 768px) {
+  body {
+    background-image: url("../assets/tablet/image-host.jpg");
+    background-repeat: no-repeat;
+    background-position: top right;
+
+    &::before {
+      background-image: none;
+    }
+  }
+
+  .error {
+    margin-top: 8px;
+    margin-left: 23px;
+  }
+
+  .header {
+    display: block;
+    margin-top: 50px;
+    margin-left: 32px;
+  }
+
+  .content {
+    background-color: $black;
+    margin-top: 152px;
+    margin-left: 39px;
+    width: 635px;
+
+    &__heading {
+      margin-top: 93px;
+      font-size: 3rem;
+      line-height: 3.5rem;
+      text-align: start;
+    }
+
+    &__para {
+      margin-top: 31px;
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+      text-align: start;
+      width: 70%;
+    }
+
+    &__form {
+      order: 1;
+      width: 427px;
+      background: $dark-purple;
+      border-radius: 28px;
+      display: flex;
+      margin-top: 40px;
+
+      &__input {
+        margin-top: 0;
+      }
+
+      &__button {
+        margin: 5px;
+        width: 57.5%;
+        font-size: 0.875rem;
+        line-height: 1.75rem;
+        font-weight: bold;
+      }
+    }
+
+    &__sponsors {
+      order: 2;
+      margin-top: 64px;
+      justify-content: flex-start;
+
+      .spotify {
+        width: 96px;
+        height: 29px;
+      }
+
+      .apple {
+        width: 78px;
+        height: 29px;
+      }
+
+      .google {
+        width: 125px;
+        height: 18px;
+      }
+
+      .pocket {
+        width: 129px;
+        height: 26px;
+      }
+    }
+  }
+
+  .dots {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+  }
+}
+
+//
+//
+// Desktop
+//
+//
+
+@media (min-width: 1440px) {
+  body {
+    background-image: none;
+    background-image: url("../assets/desktop/image-host.jpg");
+    background-position: top 130px right;
+  }
+
+  .header {
+    margin-top: 102px;
+    margin-left: 165px;
+  }
+
+  .content {
+    margin-top: 103px;
+    margin-left: 165px;
+    width: 723px;
+
+    &__heading {
+      margin-top: 88px;
+      font-size: 3.25rem;
+      line-height: 3.875rem;
+    }
+
+    &__para {
+      margin-top: 24px;
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+
+    &__form {
+      width: 427px;
+
+      &__input {
+        padding-right: 32px;
+      }
+
+      &__button {
+        width: 67%;
+      }
+    }
+  }
+
+  .dots {
+    left: calc(100% - 232px);
+    bottom: 78px;
+  }
+}
